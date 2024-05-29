@@ -1,4 +1,7 @@
-def credit_card_masking(number: [int, str]) -> str:
+from typing import Union
+
+
+def credit_card_masking(number: Union[int, str]) -> str:
     """Функция возвращает маску номера кредитной карты по шаблону - 'ХХХХ ХХ** **** ХХХХ'"""
     # Проверяем на корректность введённый номер карты. Возвращаем предупреждение при непрохождении проверки.
     # В противном случае возвращаем маску.
@@ -7,7 +10,8 @@ def credit_card_masking(number: [int, str]) -> str:
     else:
         return f"{str(number)[0:4]} {str(number)[4:6]}** **** {str(number)[-4:]}"
 
-def bank_account_masking(number: [int, str]) -> str:
+
+def bank_account_masking(number: Union[int, str]) -> str:
     """Функция возвращает маску номера банковского счёта по шаблону - '**ХХХХ'"""
     # Проверяем на корректность введённый номер счёта. Возвращаем предупреждение при непрохождении проверки.
     # В противном случае возвращаем маску.
