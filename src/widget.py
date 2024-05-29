@@ -1,7 +1,7 @@
 # Импортируем необходимые модули
 from datetime import datetime
 
-import masks
+from masks import bank_account_masking, credit_card_masking
 
 
 def masking_with_info(number: str) -> str:
@@ -22,15 +22,15 @@ def masking_with_info(number: str) -> str:
         # Проверяем результат работы функции маскировки: сообщение об ошибке либо маска.
         # Формируем и выводим результирующее сообщение
         if number_info[0] == "Счет" or number_info[0] == "Счёт":
-            if "*" in masks.bank_account_masking(number_info[-1]):
-                result_message = f"{number_info[0]} {masks.bank_account_masking(number_info[-1])}"
+            if "*" in bank_account_masking(number_info[-1]):
+                result_message = f"{number_info[0]} {bank_account_masking(number_info[-1])}"
             else:
-                result_message = masks.bank_account_masking(number_info[-1])
+                result_message = bank_account_masking(number_info[-1])
         else:
-            if "*" in masks.credit_card_masking(number_info[-1]):
-                result_message = f"{" ".join(number_info[:-1])} {masks.credit_card_masking(number_info[-1])}"
+            if "*" in credit_card_masking(number_info[-1]):
+                result_message = f"{" ".join(number_info[:-1])} {credit_card_masking(number_info[-1])}"
             else:
-                result_message = masks.credit_card_masking(number_info[-1])
+                result_message = credit_card_masking(number_info[-1])
     return result_message
 
 
