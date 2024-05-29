@@ -39,4 +39,4 @@ def date_formatting(date_string: str) -> str:
     # Преобразуем ISO строку в объект datetime
     date_time = datetime.fromisoformat(date_string)
     # Форматируем вывод под заданный шаблон
-    print(date_time.strftime("%d.%m.%Y"))
+    return date_time.strftime("%d.%m.%Y")
