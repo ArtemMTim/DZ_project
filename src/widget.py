@@ -20,7 +20,7 @@ def masking_with_info(number: str) -> str:
         # Выбираем необходимую функцию из модуля "masks".
         # Применяем функции из модуля "masks".
         # Проверяем результат работы функции маскировки: сообщение об ошибке либо маска.
-        # Формируем и выводим результирующее сообщение
+        # Формируем и выводим результирующее сообщение.
         if number_info[0] == "Счет" or number_info[0] == "Счёт":
             if "*" in bank_account_masking(number_info[-1]):
                 result_message = f"{number_info[0]} {bank_account_masking(number_info[-1])}"
@@ -36,7 +36,7 @@ def masking_with_info(number: str) -> str:
 
 def date_formatting(date_string: str) -> str:
     """Функция получает дату и время в ISO формате и выводит в соответствии с шаблоном: 'day.month.year'"""
-    # Преобразуем ISO строку в объект datetime
+    # Преобразуем ISO строку в объект datetime.
     date_time = datetime.fromisoformat(date_string)
-    # Форматируем вывод под заданный шаблон
+    # Форматируем вывод под заданный шаблон.
     return date_time.strftime("%d.%m.%Y")
