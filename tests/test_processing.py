@@ -155,7 +155,7 @@ def test_date_sort_func_2(list_of_dicts, direction, expected):
 
 # Проверка функции date_sort_func на возникновение ошибок
 def test_date_sort_func_wrong_arg_str():
-    with pytest.raises(AttributeError):
+    with pytest.raises(TypeError):
         date_sort_func("A")
 
 
