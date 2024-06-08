@@ -1,7 +1,7 @@
 # Импортируем необходимые модули
 from datetime import datetime
 
-from masks import bank_account_masking, credit_card_masking
+from src.masks import bank_account_masking, credit_card_masking
 
 
 def masking_with_info(number: str) -> str:
