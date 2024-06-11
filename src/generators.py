@@ -19,6 +19,6 @@ def card_number_generator(start: int, stop: int) -> Generator:
     """Функция принимает начальное и конечное значение диапазона
     возвращает генератор со сгенерированными в заданных рамках номерами банковских карт в формате строки"""
     for i in range(start, stop + 1):
-        generated_num = f"{"0" * (16 - len(str(i))) + str(i)}"
+        generated_num = f"{'0' * (16 - len(str(i))) + str(i)}"
         result_card_num = f"{generated_num[:4]} {generated_num[4: 8]} {generated_num[8: 12]} {generated_num[12:]}"
         yield result_card_num

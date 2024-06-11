@@ -28,7 +28,7 @@ def masking_with_info(number: str) -> str:
                 result_message = bank_account_masking(number_info[-1])
         else:
             if "*" in credit_card_masking(number_info[-1]):
-                result_message = f"{" ".join(number_info[:-1])} {credit_card_masking(number_info[-1])}"
+                result_message = f"{' '.join(number_info[:-1])} {credit_card_masking(number_info[-1])}"
             else:
                 result_message = credit_card_masking(number_info[-1])
     return result_message
