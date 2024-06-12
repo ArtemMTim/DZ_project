@@ -12,7 +12,7 @@ def description(transactions: List[dict]) -> Generator:
     """Функция принимает список словарей, возвращает генератор
     с описанием каждой транзакции в формате строки"""
     for transaction in transactions:
-        yield transaction["description"]
+        yield transaction.get("description")
 
 
 def card_number_generator(start: int, stop: int) -> Generator:
